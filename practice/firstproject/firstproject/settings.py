@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firstapp.apps.FirstappConfig',
+    'wordCount.apps.WordcountConfig', # wordCount 앱 안에있는 apps.py의 wordCount클래스를 가지고 온 것이다.
 ]
 
 MIDDLEWARE = [
