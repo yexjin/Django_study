@@ -14,4 +14,5 @@ urlpatterns = [
     # path('wc/', wc.home, name="wc"),
     # path('wc/result/', wc.result, name="result"),
     path('', blog.blog, name="blog"),
+    path('<str:id>', detail, name="detail"),
 ]
