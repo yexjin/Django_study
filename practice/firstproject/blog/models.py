@@ -7,6 +7,7 @@ class Blog(models.Model):
     writer = models.CharField(max_length=100)
     pub_date = models.DateTimeField()    # 날짜와 시간을 정해주는 필드
     body = models.TextField()     # 본문 (제한없는 text 필드)
+    img = models.ImageField(upload_to = "blog/", blank = True, null = True)
 
     # 어디선가 객체가 호출이 되었을 때, 나오는 이름 설정
     def __str__(self):

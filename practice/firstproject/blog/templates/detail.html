@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+
+{% block content %}
     <title>Detail</title>
     <style>
         body{text-align: center;}
@@ -16,8 +13,11 @@
     {{blog.pub_date}}
 </div>
 <hr>
+    {% if blog.image %}
+    <p><img src="{{blog.img.url}}" alt="" width="50" height="50"></p>
+    {% endif %}
    <p> {{blog.body}}</p>
    <a href="{%url 'edit' blog.id%}">수정하기</a>
    <a href="{%url 'delete' blog.id%}">삭제하기</a>
-</body>
-</html>
+
+{% endblock %}

@@ -1,16 +1,11 @@
 from django.contrib import admin
-from django.urls import path
-from blog.views import * 
-from blog import views as blog
+from django.urls import path, include
+from blog.views import blog
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog.blog, name="blog"),
-    path('<str:id>', detail, name="detail"),
-    path('new/',new,name="new"),
-    path('create/',create, name="create"),
-    path('edit/<str:id>', edit, name="edit"),
-    path('update/<str:id>', update, name="update"),
-    ## delete!!
-    path('delete/<str:id>', delete, name="delete"),
-]
+    path('', blog, name="blog"),
+    path('blog/', include('blog.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
