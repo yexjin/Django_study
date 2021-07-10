@@ -11,7 +11,7 @@ class Blog(models.Model):
 
     # 어디선가 객체가 호출이 되었을 때, 나오는 이름 설정
     def __str__(self):
-        return self.title #글의 제목으로 설정
+        return self.titzle #글의 제목으로 설정
     
     def summary(self):
         return self.body[:100]
